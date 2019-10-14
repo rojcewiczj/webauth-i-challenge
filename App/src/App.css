@@ -1,0 +1,271 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+a {
+  color: rgb(52, 70, 151);
+}
+
+
+.header ul {
+  margin: 0;
+  padding: 10px;
+  box-shadow: 0px 3px 6px rgba(196, 196, 196, 0.16), 0 3px 6px rgba(207, 206, 206, 0.23);
+  
+}
+.header {
+  height: 59px;
+  
+}
+
+
+/* Header-Nav */
+
+/* .header{
+  background:lightcyan;
+  margin:auto;
+} */
+
+
+/* ContactForm css*/
+
+.wrapper{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #258ea6;
+}
+
+.contact-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 50px #555;
+  background-color: #ffffff;
+}
+
+.main-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  color: #111;
+  font-weight: lighter;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.first-name,
+.last-name,
+.email,
+.message{
+  font-size: 0.8em;
+  margin-bottom: 0.25em;
+  color: #222;
+  font-weight: lighter;
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #cfcfcf;
+  margin-right: 1%;
+}
+
+.first-name::placeholder,
+.last-name::placeholder,
+.email::placeholder,
+.message::placeholder{
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: #999;
+}
+
+.first-name.error{
+  border: 1px solid red;
+}
+
+.error{
+  color: red;
+  font-size: 0.75em;
+}
+
+.last-name {
+  margin-left: 1%;
+}
+
+.first-name,
+.last-name,
+.email,
+.message{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.first-name,
+.last-name{
+  width: 43%;
+}
+
+.email,
+.message{
+  width: 100%;
+}
+
+.submit-btn{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-btn button{
+  background-color: #519e8a;
+  color: #fff;
+  border: 2px solid #fff;
+  width: 100%;
+  margin-top: 1em;
+  padding: 8px 0px;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+
+.submit-btn button:hover{
+  color: #519e8a;
+  background-color: #fff;
+  border: 2px solid #519e8a;
+}
+
+/*End of ContactForm Css*/
+
+
+/* SurveyForm */
+
+.wrapper-surveyForm {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #258ea6;
+}
+
+.survey-container {
+  width:50%;
+  margin:auto;
+  background:rgb(238, 224, 224);
+  border-radius:5px;
+}
+
+.top-survey {
+  margin:auto;
+  
+}
+
+.survey-form {
+  margin:auto;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.survey_name,
+.survey_age,
+.survey_email,
+.survey_question{
+  font-size: 0.8em;
+  margin-bottom: 0.25em;
+  color: #222;
+  font-weight: lighter;
+  padding: 20px 10px;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+  background:white;
+  width:100%;
+  
+}
+.survey-btn{
+  margin:20px auto;
+  width:50%;
+  padding:10px;
+}
+
+.survey-form-errors {
+  color:red;
+  font-size: 0.75em;
+  margin:auto;
+}
+.survey-link{
+  text-decoration:none;
+  margin:auto; 
+  color:white;
+  background:#344697;
+}
+
+.rating-btn{
+  margin: 20px auto;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Survey Rating */
+
+.wrapper-survey-rating{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #258ea6;
+}
+
+.Star {
+  width:50%;
+  margin:auto;
+  background:lightcyan;
+  border-radius:5px;
+}
+.rating-form {
+  margin: 20px auto;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  
+}
+
+.rating-symbols {
+  margin:20px auto;
+
+}
+.feedback {
+  padding:10px;
+}
+/* End of SurveyForm*/

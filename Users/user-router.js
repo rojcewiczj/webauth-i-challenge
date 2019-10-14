@@ -6,7 +6,7 @@ const Users = require('./user-model.js');
 
 const bcrypt = require('bcryptjs');
 
-const db = require('./database/dbConfig.js');
+const db = require('../data/dbConfig.js');
 
 
 
@@ -26,6 +26,7 @@ router.post('/api/register', (req, res) => {
         res.status(201).json(saved);
       })
       .catch(error => {
+        console.log(error);
         res.status(500).json(error);
       });
   });
@@ -61,6 +62,7 @@ router.post('/api/register', (req, res) => {
   
   router.get('/hash', (req, res) => {
     // read a password from the Authorization header
+    
     const password = req.headers.authorization;
   
     if (password) {
@@ -88,6 +90,7 @@ router.post('/api/register', (req, res) => {
       Users.findBy({ username })
         .first()
         .then(user => {
+          console.log(password, user.password)
           if (user && bcrypt.compareSync(password, user.password)) {
             next();
           } else {

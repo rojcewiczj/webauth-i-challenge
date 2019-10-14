@@ -1,0 +1,30 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    height: 1000px;
+    background-color: #258ea6
+
+  }
+  
+  .login-form {
+     display: flex;
+     width: 900px;
+     align-items: center;
+     flex-direction: column;
+     background-color: white;
+  }
+
+  .login-form form {
+      margin: 25px;
+  }
+  .login-card {
+      margin-top: 140px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     height: 500px;
+     width: 420px;
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+     border-radius: 5px;
+  }
