@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router();
 
-const Users = require('./Users/user-model.js');
+const Users = require('./user-model.js');
 
 const bcrypt = require('bcryptjs');
 
@@ -101,7 +101,5 @@ router.post('/api/register', (req, res) => {
       res.status(400).json({ message: 'please provide credentials' });
     }
   }
-  
-  const port = process.env.PORT || 5000;
-  server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
-  
+
+  module.exports = router;
