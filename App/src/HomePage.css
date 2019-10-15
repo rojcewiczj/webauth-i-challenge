@@ -1,0 +1,172 @@
+
+body {
+  font-size: 1.2rem;
+}
+
+.color-border{
+  
+  width: 200px;
+}
+.whole-page {
+  display: flex;
+  justify-content: center;
+  background-color: #258ea6
+}
+.main-container {
+  padding: 0 50px;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: white;
+  
+ 
+}
+
+.spacer {
+  height: 100%;
+}
+
+.session-container {
+  display: flex;
+  height: 300px;
+  width: 1000px;
+  flex-direction: column;
+
+}
+.session-container p {
+  font-size: 1.5rem;
+  
+  font-weight: bold;
+  color: rgb(52, 70, 151);
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.Graph {
+  height: 500px;
+  width: 1000px;
+  margin: 20px 0;
+  box-shadow: 0 3px 6px rgba(196, 196, 196, 0.16), 0 3px 6px rgba(207, 206, 206, 0.23);
+ 
+}
+.bottom-container {
+  margin: 20px 0px;
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  align-content: center;
+  align-items: center;
+}
+
+h4 {
+  color: rgb(40, 55, 117);
+  
+}
+
+h3 {
+  color: rgb(40, 55, 117);
+  
+}
+
+.homepage-container {
+  margin-top: 30px;
+ display: flex;
+ flex-direction: column;
+ justify-content: top;
+ align-content: center;
+ border-radius: 5px;
+
+  height: 360px;
+  width: 420px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  
+  }
+
+  
+li {
+      cursor: pointer;
+      padding: 6px 0;
+      display: flex;
+       margin: 0 15px;
+      
+      
+    }
+ul {
+    list-style: none;
+    text-align: start;
+    width:100%;
+    display: flex;
+   flex-direction: row;
+  }
+
+.delete {
+  color: rgb(177, 10, 10);
+}
+
+
+
+form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  
+}
+ 
+
+  label {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 36px 4px 40px;
+  }
+
+ legend {
+    padding-left: 40px;
+    font-weight: bold;
+    color: rgb(52, 70, 151);
+    text-align: center;
+    margin-bottom: 18px;
+    margin-top: -10px;
+  }
+
+  input {
+    width: 120px;
+  }
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px 20px 41px;
+
+ 
+}
+ button {
+   width: 80px;
+
+    border: none;
+    background-color: rgb(52, 70, 151);
+    color: white;
+    padding: 3px 8px;
+    margin-top: 25px;
+  }
+
+
+form > input {
+  background-color: #d1d1c9;
+  border: 0;
+  padding: 6px 0;
+  font-size: 1rem;
+  width: 200px;
+  outline: 0;
+  color: rgb(11, 8, 32);
+  border-bottom: 1px solid #2a2b15;
+  margin-right: 8px;
+}
+
+.list {
+  box-shadow: 0px 3px 6px rgba(196, 196, 196, 0.16), 0 3px 6px rgba(207, 206, 206, 0.23);
+}
+.message-container {
+  overflow: auto;
+}
