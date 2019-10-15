@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 import Register from './Registration';
+import axiosWithAuth from './axiosWithAuth'
+
 import '../Login.css'
 class Login extends React.Component {
     state = {
         loading: false,
-      credentials: {
+      users: {
         // email: '',
         username: '',
         password: ''
@@ -15,8 +17,8 @@ class Login extends React.Component {
   
     handleChange = e => {
       this.setState({
-        credentials: {
-          ...this.state.credentials,
+        users: {
+          ...this.state.users,
           [e.target.name]: e.target.value
         }
       });
@@ -26,12 +28,11 @@ class Login extends React.Component {
       e.preventDefault();
       this.setState({ loading: true });
       
-      axios
-        .post('http://localhost:8000/api/login'
-          , this.state.credentials)
+      axiosWithAuth()
+        .post('login'
+          , this.state.users)
         .then(res => {
-          localStorage.setItem('token', res.data.payload);
-          
+        console.log(res.data)
           this.props.history.push('/protected');
           this.setState({ loading: false });
         })
@@ -51,7 +52,7 @@ class Login extends React.Component {
               type="text"
               name="username"
               placeholder="username"
-              value={this.state.credentials.username}
+              value={this.state.users.username}
               onChange={this.handleChange}
             />
             {/* <input
@@ -65,7 +66,7 @@ class Login extends React.Component {
               type="password"
               name="password"
               placeholder="password"
-              value={this.state.credentials.password}
+              value={this.state.users.password}
               onChange={this.handleChange}
             />
           <button>Log in</button>

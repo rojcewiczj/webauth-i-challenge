@@ -53,7 +53,7 @@ router.post('/api/register', (req, res) => {
       res.status(400).json({ message: 'please provide credentials' });
     }
   });
-  router.get('api/logout', (req, res) => {
+  router.get('/api/logout', (req, res) => {
     if (req.session) {
       req.session.destroy(err => {
         res

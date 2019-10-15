@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
+import axiosWithAuth from './axiosWithAuth'
 
 class Register extends React.Component {
     state = {
@@ -23,11 +24,11 @@ class Register extends React.Component {
     login = e => {
       e.preventDefault();
       this.setState({ loading: true });
-      axios
-        .post('http://localhost:8000/api/register'
+      axiosWithAuth()
+        .post('register'
           , this.state.credentials)
         .then(res => {
-          localStorage.setItem('token', res.data.payload);
+        
           console.log(res)
       
           this.setState({ loading: false });

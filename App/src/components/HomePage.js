@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import axiosWithAuth from './axiosWithAuth'
 
 const HomePage = () => {
     const [userList, setUserList] = useState([])
@@ -8,19 +8,22 @@ const HomePage = () => {
       getData();
     }, []);
     const getData = () => {
-    axios
-        .get('http://localhost:8000/api/users')
-        .then(res => setUserList(res.data))
+     
+      axiosWithAuth()
+
+        .get('/users') 
+        .then(res => 
+          setUserList(res.data))
         .catch(error => console.log(error));
     }
     return (
       
       <div className="whole-page">
-     
-      {userList.map(user => (
-          <p>{user.name}</p>
+      
+       {userList.map(user => (
+           <p>{user.name}</p>
     ))}
-     
+     <h1>Hello</h1>
       </div>
       
     );
