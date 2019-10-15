@@ -33,12 +33,14 @@ router.post('/api/register', (req, res) => {
   
   router.post('/api/login', (req, res) => {
     let { username, password } = req.body;
-  
+    console.log('session', req.session);
     if (username && password) {
       Users.findBy({ username })
         .first()
         .then(user => {
           if (user && bcrypt.compareSync(password, user.password)) {
+            req.session.username = user.username;
+            console.log('session', req.session);
             res.status(200).json({ message: `Welcome ${user.username}!` });
           } else {
             res.status(401).json({ message: 'You cannot pass!!' });
@@ -51,7 +53,24 @@ router.post('/api/register', (req, res) => {
       res.status(400).json({ message: 'please provide credentials' });
     }
   });
-  
+  router.get('api/logout', (req, res) => {
+    if (req.session) {
+      req.session.destroy(err => {
+        res
+          .status(200)
+          .json({
+            message:
+              'you can check out any time you like, but you can never leave!!!',
+          });
+      });
+    } else {
+      res.status(200).json({ message: 'already logged out' });
+    }
+  });
+
+
+
+
   router.get('/api/users', protected, (req, res) => {
     Users.find()
       .then(users => {
@@ -84,25 +103,11 @@ router.post('/api/register', (req, res) => {
   // implement the protected middleware that will check for username and password
   // in the headers and if valid provide access to the endpoint
   function protected(req, res, next) {
-    let { username, password } = req.headers;
-  
-    if (username && password) {
-      Users.findBy({ username })
-        .first()
-        .then(user => {
-          console.log(password, user.password)
-          if (user && bcrypt.compareSync(password, user.password)) {
-            next();
-          } else {
-            res.status(401).json({ message: 'You cannot pass!!' });
-          }
-        })
-        .catch(error => {
-          res.status(500).json(error);
-        });
+    if (req.session && req.session.username) {
+      next();
     } else {
-      res.status(400).json({ message: 'please provide credentials' });
+      res.status(401).json({ message: 'You cannot pass!' });
     }
-  }
+  };
 
   module.exports = router;
